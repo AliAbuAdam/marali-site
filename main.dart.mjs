@@ -572,10 +572,22 @@ class CompiledApp {
           jsArray[jsArrayOffset + i] = getValue(wasmArray, wasmArrayOffset + i);
         }
       },
+      _1504: (jsArray, jsArrayOffset, wasmArray, wasmArrayOffset, length) => {
+        const setValue = dartInstance.exports.$wasmI16ArraySet;
+        for (let i = 0; i < length; i++) {
+          setValue(wasmArray, wasmArrayOffset + i, jsArray[jsArrayOffset + i]);
+        }
+      },
       _1505: (jsArray, jsArrayOffset, wasmArray, wasmArrayOffset, length) => {
         const getValue = dartInstance.exports.$wasmI32ArrayGet;
         for (let i = 0; i < length; i++) {
           jsArray[jsArrayOffset + i] = getValue(wasmArray, wasmArrayOffset + i);
+        }
+      },
+      _1506: (jsArray, jsArrayOffset, wasmArray, wasmArrayOffset, length) => {
+        const setValue = dartInstance.exports.$wasmI32ArraySet;
+        for (let i = 0; i < length; i++) {
+          setValue(wasmArray, wasmArrayOffset + i, jsArray[jsArrayOffset + i]);
         }
       },
       _1507: (jsArray, jsArrayOffset, wasmArray, wasmArrayOffset, length) => {
@@ -584,10 +596,22 @@ class CompiledApp {
           jsArray[jsArrayOffset + i] = getValue(wasmArray, wasmArrayOffset + i);
         }
       },
+      _1508: (jsArray, jsArrayOffset, wasmArray, wasmArrayOffset, length) => {
+        const setValue = dartInstance.exports.$wasmF32ArraySet;
+        for (let i = 0; i < length; i++) {
+          setValue(wasmArray, wasmArrayOffset + i, jsArray[jsArrayOffset + i]);
+        }
+      },
       _1509: (jsArray, jsArrayOffset, wasmArray, wasmArrayOffset, length) => {
         const getValue = dartInstance.exports.$wasmF64ArrayGet;
         for (let i = 0; i < length; i++) {
           jsArray[jsArrayOffset + i] = getValue(wasmArray, wasmArrayOffset + i);
+        }
+      },
+      _1510: (jsArray, jsArrayOffset, wasmArray, wasmArrayOffset, length) => {
+        const setValue = dartInstance.exports.$wasmF64ArraySet;
+        for (let i = 0; i < length; i++) {
+          setValue(wasmArray, wasmArrayOffset + i, jsArray[jsArrayOffset + i]);
         }
       },
       _1511: x0 => new ArrayBuffer(x0),
@@ -619,6 +643,7 @@ class CompiledApp {
       _1553: (a, s, e) => a.slice(s, e),
       _1556: a => a.length,
       _1558: (a, i) => a[i],
+      _1559: (a, i, v) => a[i] = v,
       _1561: o => {
         if (o instanceof ArrayBuffer) return 0;
         if (globalThis.SharedArrayBuffer !== undefined &&
@@ -671,6 +696,7 @@ class CompiledApp {
       _1603: Function.prototype.call.bind(DataView.prototype.getInt32),
       _1604: Function.prototype.call.bind(DataView.prototype.setInt32),
       _1607: Function.prototype.call.bind(DataView.prototype.getBigInt64),
+      _1608: Function.prototype.call.bind(DataView.prototype.setBigInt64),
       _1609: Function.prototype.call.bind(DataView.prototype.getFloat32),
       _1610: Function.prototype.call.bind(DataView.prototype.setFloat32),
       _1611: Function.prototype.call.bind(DataView.prototype.getFloat64),
